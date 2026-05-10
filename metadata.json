@@ -1,0 +1,6 @@
+{
+  "name": "Nothing Radio",
+  "description": "A personal AI-powered radio station with Nothing Design aesthetics.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["AI DJ", "Minimalist Player", "Nothing Design"]
+}

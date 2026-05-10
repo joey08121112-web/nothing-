@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Doto", "Space Mono", monospace;
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-black: #000000;
+  --color-surface: #111111;
+  --color-surface-raised: #1A1A1A;
+  --color-border: #222222;
+  --color-border-visible: #333333;
+  --color-text-disabled: #666666;
+  --color-text-secondary: #999999;
+  --color-text-primary: #E8E8E8;
+  --color-text-display: #FFFFFF;
+  --color-accent: #D71921;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+
+  --radius-nd: 16px;
+  --radius-nd-sm: 8px;
+  --radius-nd-pill: 9999px;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-text-primary font-sans antialiased;
+  }
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, var(--color-border-visible) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.dot-grid-subtle {
+  background-image: radial-gradient(circle, var(--color-border) 0.5px, transparent 0.5px);
+  background-size: 12px 12px;
+}
+
+/* Custom Scrollbar for Nothing Aesthetic */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-visible);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-disabled);
+}
