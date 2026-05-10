@@ -1,6 +1,6 @@
 {
-  "name": "Nothing Radio",
-  "description": "A personal AI-powered radio station with Nothing Design aesthetics.",
+  "name": "Claudio FM",
+  "description": "An AI-powered radio agent with a Liquid Glass aesthetic, featuring fluid animations, glassmorphism, and a conversational AI DJ.",
   "requestFramePermissions": ["microphone"],
-  "majorCapabilities": ["AI DJ", "Minimalist Player", "Nothing Design"]
+  "majorCapabilities": ["AI DJ", "Liquid Glass Design", "Real-time Chat"]
 }

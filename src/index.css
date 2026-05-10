@@ -1,62 +1,65 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Doto", "Space Mono", monospace;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --color-black: #000000;
-  --color-surface: #111111;
-  --color-surface-raised: #1A1A1A;
-  --color-border: #222222;
-  --color-border-visible: #333333;
-  --color-text-disabled: #666666;
-  --color-text-secondary: #999999;
-  --color-text-primary: #E8E8E8;
-  --color-text-display: #FFFFFF;
-  --color-accent: #D71921;
-  --color-zinc-500: #71717a;
-  --color-zinc-600: #52525b;
-  --color-zinc-700: #3f3f46;
-  --color-zinc-800: #27272a;
-  --color-zinc-900: #18181b;
-  --color-zinc-950: #09090b;
-
-  --radius-nd: 16px;
-  --radius-nd-sm: 8px;
+  --color-glass-bg: rgba(20, 20, 20, 0.6);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-accent: #ffffff;
+  --color-accent-dim: rgba(255, 255, 255, 0.4);
+  --color-claudio-green: #22c55e;
+  
+  --radius-nd: 28px;
+  --radius-nd-sm: 14px;
   --radius-nd-pill: 9999px;
 }
 
 @layer base {
   body {
-    @apply bg-black text-text-primary font-sans antialiased;
+    @apply bg-[#000514] text-white font-sans antialiased overflow-hidden;
   }
 }
 
-.dot-grid {
-  background-image: radial-gradient(circle, var(--color-border-visible) 1px, transparent 1px);
-  background-size: 16px 16px;
+.glass-morphism {
+  background: rgba(10, 20, 50, 0.2);
+  backdrop-filter: blur(40px) saturate(250%);
+  border: 1px solid rgba(100, 150, 255, 0.1);
+  box-shadow: 
+    0 8px 32px -4px rgba(0, 0, 0, 0.4),
+    inset 0 0 2px 1px rgba(100, 150, 255, 0.05);
 }
 
-.dot-grid-subtle {
-  background-image: radial-gradient(circle, var(--color-border) 0.5px, transparent 0.5px);
-  background-size: 12px 12px;
+.claudio-card {
+  background: linear-gradient(165deg, rgba(20, 35, 80, 0.4) 0%, rgba(0, 5, 20, 0.8) 100%);
+  border: 1px solid rgba(100, 150, 255, 0.06);
+  backdrop-filter: blur(35px) saturate(180%);
+  box-shadow: 
+    0 40px 80px -15px rgba(0, 0, 0, 0.7),
+    inset 0 1px 3px rgba(100, 150, 255, 0.1);
 }
 
-/* Custom Scrollbar for Nothing Aesthetic */
-::-webkit-scrollbar {
+.liquid-bg {
+  filter: blur(110px);
+  animation: liquid-float 35s infinite alternate ease-in-out;
+  mix-blend-mode: screen;
+}
+
+@keyframes liquid-float {
+  0% { transform: translate(-10%, -10%) rotate(0deg); }
+  50% { transform: translate(10%, 10%) rotate(180deg); }
+  100% { transform: translate(-10%, -10%) rotate(360deg); }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
-
-::-webkit-scrollbar-track {
-  background: var(--color-black);
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
 }
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-border-visible);
-  border-radius: 2px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-disabled);
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
